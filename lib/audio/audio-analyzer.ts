@@ -17,8 +17,7 @@ export class AudioAnalyzer {
   private startTime = 0;
   private pauseOffset = 0;
   private isPlaying = false;
-  private freqData: Uint8Array = new Uint8Array(0);
-
+private freqData: Uint8Array<ArrayBuffer> = new Uint8Array(new ArrayBuffer(0));
   // Running state for kick detection (compare bass to recent average)
   private bassHistory: number[] = [];
   private historySize = 30; // ~0.5 sec at 60fps
@@ -34,8 +33,7 @@ export class AudioAnalyzer {
     this.analyser.fftSize = 1024; // gives 512 frequency bins
     this.analyser.smoothingTimeConstant = 0.6;
     this.gainNode = this.context.createGain();
-    this.freqData = new Uint8Array(this.analyser.frequencyBinCount);
-  }
+this.freqData = new Uint8Array(new ArrayBuffer(this.analyser.frequencyBinCount));  }
 
   // Returns a MediaStream of the audio output that can be muxed into recordings
   getMediaStream(): MediaStream | null {
