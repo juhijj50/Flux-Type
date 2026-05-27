@@ -1,6 +1,7 @@
-import type { EffectConfig } from '../types';
+import type { EffectConfig, EffectId } from '../types';
 
-export const EFFECTS: Record<string, EffectConfig> = {
+
+export const EFFECTS: Record<EffectId, EffectConfig> = {
   magnetize: {
     id: 'magnetize',
     name: 'Magnetize',
@@ -13,4 +14,4 @@ export const EFFECTS: Record<string, EffectConfig> = {
   },
 };
 
-export const EFFECT_ORDER: Array<keyof typeof EFFECTS> = ['magnetize', 'shatter'];
+export const EFFECT_ORDER: EffectId[] = ['magnetize', 'shatter'];

@@ -1,6 +1,7 @@
-import type { SceneConfig } from '../types';
+import type { SceneConfig, SceneId } from '../types';
 
-export const SCENES: Record<string, SceneConfig> = {
+
+export const SCENES: Record<SceneId, SceneConfig> = {
   ink: {
     id: 'ink',
     name: 'Ink',
@@ -39,4 +40,4 @@ export const SCENES: Record<string, SceneConfig> = {
   },
 };
 
-export const SCENE_ORDER: Array<keyof typeof SCENES> = ['ink', 'neon', 'vapor'];
+export const SCENE_ORDER: SceneId[] = ['ink', 'neon', 'vapor'];
